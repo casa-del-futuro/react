@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creando Elementos con JSX</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+  <div id="root"> </div>
+
+  <script type="text/babel">
+
+    /* Tu código React va aquí
+        No olvides que el elemento padre debe llamarse igual que el elemento que espera el render */
+    const div = (<h1>REACT JS</h1>)
+
+    const div1 = (
+      <div>
+        <h1>React JS</h1>
+        <h2>Framework</h2>
+      </div>
+    )
+
+    const alumnos = ["Anyelen", "Luis", "Vero", "Joaquin", "Juanma"]
+
+    const div2 = () => {
+      return (
+      <div>
+        <h1>Alumnos</h1>
+        {alumnos.map((alumno,id) => <h3>{id}{alumno}</h3>)}
+      </div>)
+    }
+
+
+    ReactDOM.render((div2()), document.getElementById("root"));
+
+  </script>
+</body>
+
+</html>
