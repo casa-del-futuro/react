@@ -1,0 +1,30 @@
+.todo, fieldset{
+  display: flex;
+}
+.todo input{
+  width: 80%;
+}
+
+main{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+fieldset{
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+fieldset button{
+  padding: 4px;
+}
+
+body{
+  text-align: center;
+}
+
+
+html{
+  
+}
