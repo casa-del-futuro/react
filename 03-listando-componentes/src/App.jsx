@@ -1,4 +1,5 @@
 import './App.css'
+import RenderProduct from './components/RenderProduct'
 
 const PRODUCTS = [
   {
@@ -98,31 +99,6 @@ const PRODUCTS = [
     code: 66778
   }
 ]
-
-const ProductCard = ({product}) => {
-  return (
-    <article key={product.code}>
-      <h2>{product.name}</h2>
-      <small>{product.category}</small>
-      <p>{product.description}</p>
-      <h2>{product.price}</h2>
-      <p>{product.stock ? "Hay stock" : "No hay stock"}</p>
-    </article>
-  )
-}
-
-const RenderProduct = ({ listado }) => {
-  return (
-    <section>
-      {
-        listado.map((product) => {
-          return (<ProductCard key={product.code} product={product}  />)
-        })
-      }
-    </section>
-  )
-}
-
 
 function App() {
 
