@@ -1,0 +1,15 @@
+article{
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+section{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 8px;
+  justify-content: center;
+}
