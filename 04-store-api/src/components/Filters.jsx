@@ -1,11 +1,12 @@
-import {useState} from 'react'
+import { useContext, useState } from 'react'
+import { FilterContext } from '../context/Filters'
 
-const Filters = ({setFilters, children}) => {
+const Filters = () => {
 
-  const [ minPrice, setMinPrice ] = useState(0)
+  // consumir el contexto
+  const {filters, setFilters} = useContext(FilterContext)
 
   const handleChangeMinPrice = (e) => {
-    setMinPrice(e.target.value)
     setFilters( (prevState) => {
       return( { ...prevState, minPrice : e.target.value} )
     }  )
@@ -19,7 +20,6 @@ const Filters = ({setFilters, children}) => {
 
   return (
     <section>
-      {children}
       <div>
         <label htmlFor="price">A partir de: </label>
         <input
@@ -27,9 +27,10 @@ const Filters = ({setFilters, children}) => {
           id='price'
           min={0}
           max={1000}
+          value={filters.minPrice}
           onChange={handleChangeMinPrice}
         />
-        <strong>{minPrice}</strong>
+        <strong>{filters.minPrice}</strong>
       </div>
 
       <div>

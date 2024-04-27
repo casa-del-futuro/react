@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FilterContext } from '../context/Filters'
 
-const Footer = ({filters}) => {
+const Footer = () => {
+
+  const {filters} = useContext(FilterContext)
   return (
     <div>
       {JSON.stringify(filters, null,2)}
