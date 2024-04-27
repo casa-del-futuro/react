@@ -1,37 +1,52 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Card from './components/Card'
+import Products from './components/Products'
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 
 function App() {
   const [products, setProducts] = useState([])
+  const [filters, setFilters] = useState({
+    minPrice: 0,
+    category: "all"
+  })
 
+  // Fetch de product
   const getProduct = async () => {
-    const res = await fetch("https://dummyjson.com/products?limit=12")
+    const res = await fetch("https://dummyjson.com/products")
     const data = await res.json()
     setProducts(data.products)
   }
-
-  const renderProduct = () => {
-    return (
-      <ul>
-        {products.map(({ id, title, description, images }) => {
-          return (
-            <Card key={id} title={title} description={description} images={images} />
-          )
-        })}
-      </ul>
-    )
-  }
-
 
   useEffect(() => {
     getProduct()
   }, [])
 
 
+  // fx filtrado de products
+  const filterProducts = (products) => {
+    return(
+      products.filter( (product) => {
+        return(
+          product.price >= filters.minPrice && 
+          ( 
+            filters.category == "all" || 
+            product.category == filters.category
+          ) 
+        )
+      } )
+    )
+  }
+
+  const filteredProducts = filterProducts(products)
+  
+
   return (
     <>
-      {renderProduct()}
+      <Header setFilters={setFilters} />
+      <Footer filters={filters}/>
+      <Products products={filteredProducts}/>
     </>
   )
 }

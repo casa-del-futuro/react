@@ -10,14 +10,13 @@ ul{
 }
 
 li{
+  min-width: 200px;
   width: 30%;
   max-width: 300px;
   border: 2px solid #ccc;
   border-radius: 8px;
-  padding: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   align-items: center;
 }
@@ -26,6 +25,10 @@ img{
   width: 100%;
   aspect-ratio: 3/2;
   border-radius: 8px;
+}
+
+li > div{
+  padding: 8px;
 }
 
 

@@ -1,9 +1,18 @@
-const Card = ({  title, description, images }) => {
+const Card = ({  product }) => {
+
+  const {title, description, images, price, category} = product
+
   return (
     <li>
       <img src={images[0]} alt={description} />
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <div>
+        <strong>{title} - {price}$</strong>
+        <p><i>{category}</i></p>
+        <p>{description}</p>
+      </div>
+      <div>
+        <button>🛒</button>
+      </div>
     </li>
   )
 }
