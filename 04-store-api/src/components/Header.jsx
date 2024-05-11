@@ -1,4 +1,4 @@
-import "./Header.css"
+import "./styles/header.css"
 import Filters from './Filters'
 
 const Header = () => {

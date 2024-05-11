@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useProducts } from "../App"
+import { useProducts } from "../hooks/useProducts"
 import { useEffect } from "react"
 
 const Product = () => {

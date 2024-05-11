@@ -19,8 +19,8 @@ const Filters = () => {
   }
 
   return (
-    <section>
-      <div>
+    <section className="filters">
+      <div className="filters-minPrice">
         <label htmlFor="price">A partir de: </label>
         <input
           type="range"
@@ -33,7 +33,7 @@ const Filters = () => {
         <strong>{filters.minPrice}</strong>
       </div>
 
-      <div>
+      <div className="filters-categoria">
         <label htmlFor="category">Categoría</label>
         <select name="category" id="category" onChange={handleChangeCategory} >
           <option value="all">Todos</option>
