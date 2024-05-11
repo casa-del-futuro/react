@@ -28,7 +28,7 @@ export default function Products() {
   return (
     <>
       <div className="searchBar">
-        <input value={search} type="text" onChange={handleSearchParams} />
+        <input value={search} type="text" onChange={handleSearchParams} onBlur={handleSearchParams} />
         <button>🔍</button>
       </div>
       <ul className="products">

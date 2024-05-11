@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
-import { FilterContext } from '../context/Filters'
+import { CartContext } from '../context/Cart'
 
 const Footer = () => {
 
-  const {filters} = useContext(FilterContext)
+
+  const {cart,  clearCart, total } = useContext(CartContext)
   return (
     <div>
-      {JSON.stringify(filters, null,2)}
+      {JSON.stringify(cart, null,2)}
+      {total}
+      <button onClick={clearCart} style={{background: "red"}} >Borrar todo</button>
     </div>
   )
 }
