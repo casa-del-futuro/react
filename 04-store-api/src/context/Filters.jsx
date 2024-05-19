@@ -27,8 +27,6 @@ export const FilterProvider = ({children}) => {
       )
     }
   
-
-
   return(
     <FilterContext.Provider value={{filters, filterProducts, setFilters}} >
       {children}

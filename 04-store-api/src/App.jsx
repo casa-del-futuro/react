@@ -2,6 +2,7 @@ import Products from './components/Products'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { Cart } from './components/Cart'
+import Layout from './components/Layout'
 
 
 
@@ -10,12 +11,12 @@ import { Cart } from './components/Cart'
 function App() {
 
   return (
-    <>
+    <Layout>
       <Header />
-      <Cart />
+
       {/* <Footer /> */}
       <Products />
-    </>
+    </Layout>
   )
 }
 

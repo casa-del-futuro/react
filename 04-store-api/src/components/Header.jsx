@@ -6,7 +6,6 @@ const Header = () => {
 
   return (
     <>
-      <h1> Store API 🛒 </h1>
       <Filters  />
     </>
   )

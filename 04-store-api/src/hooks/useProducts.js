@@ -4,11 +4,13 @@ import { useState } from 'react'
 export const useProducts = () => {
   const [product, setProduct] = useState({})
   const [products, setProducts] = useState([])
+  const [total, setTotal] = useState(0)
 
     // Fetch de products
-    const getProducts = async () => {
-      const res = await fetch(URL_BASE + "?limit=0")
+    const getProducts = async (limit=12 , skip=0) => {
+      const res = await fetch(URL_BASE + `?limit=${limit}&skip=${skip}`)
       const data = await res.json()
+      setTotal(data.total)
       setProducts(data.products)
     }
 
@@ -26,5 +28,6 @@ export const useProducts = () => {
       setProducts(data.products)
     }
 
-  return{ products, product, getProducts, getProduct ,getProductsByName}
+
+  return{ total, products, product, getProducts, getProduct ,getProductsByName}
 }
