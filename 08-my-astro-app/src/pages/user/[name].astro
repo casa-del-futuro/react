@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from '../../layouts/Layout.astro'
+
+export const  getStaticPaths = (() => {
+  return [
+    { params: { name: "jhon" } },
+    { params: { name: "jane" } },
+    { params: { name: "bob" } },
+  ];
+})
+
+
+const users = [
+  {
+    id: "jhon",
+    name: "John Doe",
+    email: "john@doe.com",
+  },
+  {
+    id: "jane",
+    name: "Jane Doe",
+    email: "jane@doe.com",
+  },
+  {
+    id: "bob",
+    name: "Bob Smith",
+    email: "bob@smith.com",
+  },
+]
+
+const { name } = Astro.params
+const user = users.find((user) => user.id === name)
+
+---
+
+<Layout title={user.name}>
+  <main>
+    <h1>{user.name}</h1>
+    <p>{user.email}</p>
+  </main>
+</Layout>

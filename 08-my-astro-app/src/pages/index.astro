@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import User from '../components/User.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Welcome to Astro</h1>
+
+		<a href="/user/jhon">
+			<User name="John Doe" email="john@doe.com" />
+		</a>
+		<a href="/user/jane">
+			<User name="Jane Doe" email="jane@doe.com" />
+		</a>
+		<a href="/user/bob">
+			<User name="Bob Smith" email="bob@smith.com" />
+		</a>
+
+	</main>
+</Layout>
+
+
+<style>
+	h1{
+		background-color: red;
+	}
+</style>

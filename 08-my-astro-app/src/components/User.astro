@@ -1,0 +1,31 @@
+---
+const { name, email } = Astro.props;
+---
+
+<div class="user">
+  <h3>{name}</h3>
+  <p>{email}</p>
+</div>
+
+<style>
+  .user {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    color: #999;
+  }
+</style>
